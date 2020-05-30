@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Megrim|Nunito+Sans:400,900" rel="stylesheet" />
+  <title>Squirrels </title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, rgba(87, 231, 87, 0.787), rgba(1, 71, 1, 0.87));
+      font-family: 'Nunito Sans', sans-serif;
+      color: #dacaca;
+      min-height: 100vh;
+      padding: 3rem 6rem;
+    }
+
+    h1 {
+      font-family: 'Melgrim', sans-serif;
+      font-size: 6rem;
+      color: white;
+      transform: skewY(-5deg);
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .container {
+      width: 114rem;
+      margin: 0 auto;
+    }
+
+    .card-container {
+      margin-top: 8rem;
+    }
+
+    .card {
+      background: white;
+      box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, .3);
+      transform: skewX(-20deg);
+      display: flex;
+      align-items: center;
+      margin-bottom: 6rem;
+      transition: all .5s;
+    }
+
+
+    .card_img {
+      padding: 1.5rem 2rem .5rem 1.5rem;
+      transform: skewX(20deg);
+    }
+
+    img {
+      width: 7.5rem;
+      border-radius: 50%;
+    }
+
+    .card_name-box {
+      background: linear-gradient(to bottom right, rgba(87, 231, 87, 0.787), rgba(1, 71, 1, 0.87));
+      /* transform: skewX(20deg); */
+      display: flex;
+      align-items: center;
+      /* margin-right: auto; */
+      padding: 0 3rem;
+    }
+
+    .card_name {
+      font-family: 'Lato', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: .5rem;
+      color: #dacaca;
+      text-transform: uppercase;
+      text-indent: italic;
+      transform: skewX(20deg);
+    }
+
+    .card_details {
+      display: flex;
+    }
+
+    .card_details-box {
+      align-self: stretch;
+      border: 1px solid #dacaca;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      margin-right: auto;
+    }
+
+    .card_location {
+      font-family: 'Lato', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: .5rem;
+      color: #dacaca;
+      text-transform: uppercase;
+      /* text-indent: italic; */
+      transform: skewX(20deg)
+    }
+
+    .card-link:link,
+    .card-link:visited {
+
+      text-decoration: none;
+      color: #dacaca;
+      margin: 0 auto;
+      font-size: 1.5rem;
+      letter-spacing: .5rem;
+      transform: skewX(20deg);
+      padding: 0 1rem;
+      transition: all .3s;
+    }
+
+    .card_link {
+      background: linear-gradient(to bottom right, rgba(87, 231, 87, 0.787), rgba(1, 71, 1, 0.87));
+      overflow: hidden;
+      display: inline-flex;
+      flex-grow: 100;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: skewX(-20deg) scale(1.1);
+    }
+
+    .card-link:hover {
+      transform: skewX(20deg) scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Squirrels</h1>
+
+    {%ANIMAL_CARD%}
+
+  </div>
+
+</body>
+
+</html>
