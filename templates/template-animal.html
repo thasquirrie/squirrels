@@ -38,6 +38,7 @@
       /* height: 50px; */
       border-radius: 1rem;
       margin-bottom: 3rem;
+      position: relative;
     }
 
     img {
@@ -64,16 +65,21 @@
       /* border: 1px solid #dacaca; */
       background-color: #ffffff;
       border-radius: 1rem;
+      font-size: 1.4rem;
     }
 
     .card-number, .card-location {
       padding: 2rem 1rem;
       text-align: center;
+      background: linear-gradient(to right, black, transparent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
 
 .description {
-  background: linear-gradient(to right, black, transparent), #ffffff;
+  background: linear-gradient(to right, black, transparent), #927b7b;
   border-radius: 1rem;
 }
     .card-description {
@@ -85,11 +91,36 @@
       padding: 2rem 1rem;
       line-height: 1.4;
     }
+
+    .btn:link,
+    .btn:visited {
+      padding: .5rem 2.5rem;
+      background-color:rgba(87, 231, 87, 0.787);
+      color: #fff;
+      border-radius: 1.5rem;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      font-size: 1.5rem;
+      z-index: 1;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn:active {
+      transform: translateY(-1.5px);
+    }
+
+    .btn:
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card_container">
+      <a href="/" class="btn">Back &lAarr;</a>
       <div class="card_img">
         <img src="{%IMAGE%}" alt="{%NAME%}">
       </div>
