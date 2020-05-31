@@ -1,18 +1,10 @@
 const fs = require('fs');
 const url = require('url');
 const http = require('http');
+const replaceCards = require('./functions');
 
 
-const replaceCards = (temp, animal) => {
-  let output = temp.replace(/{%LOCATION%}/g, animal.location);
-  output = output.replace(/{%NAME%}/g, animal.name);
-  output = output.replace(/{%IMAGE%}/g, animal.image);
-  output = output.replace(/{%ID%}/g, animal.id);
-  output = output.replace(/{%DESCRIPTION%}/, animal.description);
 
-
-  return output;
-}
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'UTF-8');
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'UTF-8');
@@ -44,15 +36,11 @@ const server = http.createServer((req, res) => {
     const output = replaceCards(tempAnimal, animal);
     res.end(output);
 
-  } else if (pathName === '/api') {
+  } else if (pathname === '/api') {
 
 
     res.writeHead(200, { 'Content-type': 'application/json' });
     res.end(data);
-  } else if (pathName === '/animal') {
-    res.writeHead(200, {'Content-type': 'text/html'});
-
-    res.end(tempAnimal);
   } else {
     res.writeHead(404, {'Content-type': 'text/html'});
     res.end('<h3>Page not found!</h3>');
